@@ -4,19 +4,19 @@ import axios from 'axios';
 const About = () => {
   const [dash_id, setDash_id] = useState("");
   const [dash_result, setDash_result] = useState("");
-  
+  // eslint-disable-next-line
   useEffect(() => {
     setDash_id(localStorage.getItem('_id'));
     console.log(dash_id);
     if(dash_id){
-        axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
-        .then((res)=>{
-            // console.log(res.data)
-            setDash_result(res.data);
-            // dash_result && console.log(dash_result.dataHos);
-        })
-        .catch((err)=>{
-            console.log(err);
+      axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
+      .then((res)=>{
+        // console.log(res.data)
+        setDash_result(res.data);
+        // dash_result && console.log(dash_result.dataHos);
+      })
+      .catch((err)=>{
+        console.log(err);
         })
           }
     }

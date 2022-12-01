@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="baseline">
-        <span>Designed and Developed by Team SupaSolvers</span>
+        {/* <span>Designed and Developed by Team </span> */}
       </div>
     </>
   );

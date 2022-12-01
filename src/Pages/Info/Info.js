@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Info.css";
 import TextField from "@mui/material/TextField";
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+// import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import logo from "../../Assets/SSlogo.png";
@@ -44,12 +44,12 @@ const Info = () => {
 
   return (
     <div className="Info">
-      <img className="signlogo" src={logo} />
+      <img className="signlogo" src={logo} alt="img" />
       <div className="center">
         <div className="incenter">
           <div className="layer1">
             <div className="signIn_logo">
-              <img src={logo} />
+              <img src={logo}  alt="img"/>
             </div>
             <span className="welcome">Welcomes You</span>
           </div>

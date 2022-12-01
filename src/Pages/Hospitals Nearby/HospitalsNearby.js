@@ -12,7 +12,7 @@ const HospitalsNearby = () => {
   const [hospdata, setHospdata] = useState([""]);
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
-  const [happen, setHappen] = useState('');
+  // const [happen, setHappen] = useState('');
 
    useEffect(() => {
     axios

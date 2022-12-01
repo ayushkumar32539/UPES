@@ -12,7 +12,8 @@ const Dashboard = () => {
 
     const [dash_id, setDash_id] = useState("");
     const [dash_result, setDash_result] = useState("");
-    const [dash_booking, setDash_booking] = useState("xxx");
+    // const [dash_booking, setDash_booking] = useState("xxx");
+     // eslint-disable-next-line
     useEffect(() => {
       setDash_id(localStorage.getItem('_id'));
       console.log(dash_id);
@@ -42,7 +43,7 @@ const Dashboard = () => {
     <div className='Dashboard'>
         <div className='headerdash'>
             <div className='logo'>
-                <img src={logo}></img>
+                <img src={logo} alt="img"></img>
             </div>
             <div className='dashh'>
                 <span>Dashboard</span>
@@ -51,11 +52,11 @@ const Dashboard = () => {
         <div className='dshsec'>
         <div className='dashsec1'>
                 <div onClick={(e) => handledashboardbtn("about")}className={clicked === "about"?"dashsec1_xy" : "dashsec1_xx" }>
-                    <img src={leaf}></img>
+                    <img src={leaf} alt="img"></img>
                 <span value="about"  className='colorx'>About</span>
                 </div>
                 <div onClick={(e) => handledashboardbtn("bedstatus")} className={clicked === "bedstatus"?"dashsec1_xy" : "dashsec1_xx" }>
-                <img src={leaf}></img>
+                <img src={leaf} alt="img"></img>
                 <span className='colorx' value="bedstatus" >Bed status</span>
                 </div>
         </div>
@@ -66,7 +67,7 @@ const Dashboard = () => {
         </div>
         <div className='dashsec3'>
             <div className='dash_img'>
-                <img src={Hosprefimg}></img>
+                <img src={Hosprefimg} alt="img"></img>
             </div>
             <div className='img_below'>
             {dash_result && <span className="main">{dash_result.dataHos.name}</span>}

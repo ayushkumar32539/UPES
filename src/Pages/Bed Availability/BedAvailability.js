@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./BedAvailability.css";
 import Hosprefimg from "../../Assets/hosprefimg.png";
-import StarIcon from "@mui/icons-material/Star";
+// import StarIcon from "@mui/icons-material/Star";
 import Navbar from "../../Components/Navbar/Navbar";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
@@ -10,15 +10,15 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
+// import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import Footer from '../../Components/Footer/Footer';
 // import Support from '../../Components/Support/Support';
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { fontSize } from "@mui/system";
+import Select from "@mui/material/Select";
+// import { fontSize } from "@mui/system";
 import { useLocation } from "react-router";
 import axios from "axios";
 
