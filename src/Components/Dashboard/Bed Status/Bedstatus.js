@@ -15,6 +15,7 @@ const Bedstatus = () => {
   }
   useEffect(() => {
     setDash_id(localStorage.getItem('_id'));
+    // eslint-disable-next-line
     if(dash_id){
         axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
         .then((res)=>{

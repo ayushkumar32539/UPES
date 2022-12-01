@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // import Button from '@mui/material/Button';
 import Button from '@mui/material/Button';
-import { width } from "@mui/system";
+// import { width } from "@mui/system";
 const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
   const navigate = useNavigate();
   const [beds_avail, setBeds_avail] = useState("");
@@ -35,7 +35,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
     <div className="Hosplist">
       <div className="inHosplist">
         <div className="hosplistimg">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80"></img>
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80" alt="img"></img>
         </div>
         <div className="hosplisttxt">
           <div className="hosplisttitle">

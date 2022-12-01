@@ -32,11 +32,17 @@ const BedAvailability = () => {
   const otp5Ref = useRef(null);
   const otp6Ref = useRef(null);
 
+  // eslint-disable-next-line
   const [otp1, setOtp1] = useState("");
+// eslint-disable-next-line
   const [otp2, setOtp2] = useState("");
+// eslint-disable-next-line
   const [otp3, setOtp3] = useState("");
+ // eslint-disable-next-line
   const [otp4, setOtp4] = useState("");
+// eslint-disable-next-line
   const [otp5, setOtp5] = useState("");
+// eslint-disable-next-line
   const [otp6, setOtp6] = useState("");
 
   const [pin1, setPin1] = useState([""]);
@@ -48,6 +54,7 @@ const BedAvailability = () => {
 
   const [verified, setVerified] = useState("");
   const [store, setStore] = useState("");
+// eslint-disable-next-line
   const [hospid, setHospid] = useState(location.state.hospid);
   const [bedtype, setBedtype] = useState("");
   const [result, setResult] = useState();
@@ -156,7 +163,7 @@ const BedAvailability = () => {
       <Navbar defaulth={"Hospitals Nearby"} />
       <div className="availablesec">
         {<div className="secdiv1">
-          <img src={Hosprefimg}></img>
+          <img src={Hosprefimg} alt="img"></img>
         </div>}
         <div className="secdiv2">
           <div className="titlehosp">
