@@ -39,8 +39,8 @@ const Bedstatus = () => {
       </div>
 
       <div className='dash_status'>
-        <span className={type_select === "General"? 'dash_split1' : 'dash_split2'} value="General" onClick={(e) => handletype("General")}>General Beds</span>
-        <span className={type_select === "Special"? 'dash_split1' : 'dash_split2' }value="Special"  onClick={(e) => handletype("Special")}>Special Beds</span>
+        <span className={type_select === "General"? 'dash_split1' : 'dash_split2'} value="General" onClick={(e) => handletype("General")}>Plastic Waste</span>
+        <span className={type_select === "Special"? 'dash_split1' : 'dash_split2' }value="Special"  onClick={(e) => handletype("Special")}>Other Waste</span>
       </div>
 
       <div className="dash_txt">

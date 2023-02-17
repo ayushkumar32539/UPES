@@ -7,37 +7,36 @@ import { useNavigate } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const Signupcomp = () => {
   const navigate = useNavigate();
-  const [hospitalName, setHospitalName] = useState("");
+  const [name, setName] = useState("");
   const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState();
   const [email, setEmail] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [psswd, setPsswd] = useState("");
-  // const [hospitalId, setHospitalId] = useState("");
-  const [hospitaltype, setHospitaltype] = useState("");
-  const [pincode, setPincode] = useState("");
+  const [password, setPassword] = useState("");
+  const [role, setRole] = useState();
+  const [pincode, setPincode] = useState();
 
   // let token;
   const handlesignup = (e) =>{
     e.preventDefault();
     const data = {
-      name: hospitalName,
+      name: name,
       email: email,
-      mobileNum:phone,
-      password:psswd,
+      phone:phone,
+      password:password,
       address:address,
       state:state,
       city:city,
-      pincode:pincode,
-      hospitaltype:hospitaltype
+      pin:pincode,
+      role:role
     }
-    axios.post('https://sih-23.herokuapp.com/registerhospital',data)
+    axios.post('https://plasticwastemanage-production.up.railway.app/register',data)
     .then((res) => {
       console.log(res.data);
       if(res.data.token){     
         localStorage.setItem("token",res.data.token);
-        localStorage.setItem("_id",res.data.save._id);
+        // localStorage.setItem("_id",res.data.save._id);
         navigate('/Info');
       }
     })
@@ -65,20 +64,24 @@ const Signupcomp = () => {
         <div className="Userbox2">
           <div className="text2" id="textt">
             <span></span>
-            <input onChange={(e) => {setHospitalName(e.target.value)}} value={hospitalName} placeholder="Hospital Name" />
+            <input onChange={(e) => {setName(e.target.value)}} value={name} placeholder="Name" />
           </div>
           <div className="text2in" id="text">
-            <div className="ht">Hospital Type</div>
-            <div className="rradio">
+            <div className="ht">Role</div>
+            {/* <div className="rradio">
               <div>
-                <input onChange={(e) => {setHospitaltype(true)}}  type="radio" value="governmenttype" name="ht" />
-                <label htmlFor="governmenttype">Government</label>
+                <input onChange={(e) => {setRole(true)}}  type="radio" value="governmenttype" name="ht" />
+                <label htmlFor="governmenttype">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setHospitaltype(false)}}  type="radio" value="privatetype" name="ht" />
-                <label htmlFor="privatetype">Private</label>
+                <input onChange={(e) => {setRole(false)}}  type="radio" value="privatetype" name="ht" />
+                <label htmlFor="privatetype">Seller</label>
               </div>
-            </div>
+            </div> */}
+             <div className="text2">
+            <span></span>
+            <input onChange={(e) => {setRole(e.target.value)}} value={role} placeholder="Role" />
+          </div>
           </div>
           <div className="text2">
             <span></span>
@@ -106,15 +109,13 @@ const Signupcomp = () => {
           </div>
           <div className="text2">
             <span></span>
-            <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
+            <input onChange={(e) => {setPassword(e.target.value)}} value={password} placeholder="Password" />
           </div>
           <div className="signbtn2">
             <button onClick={handlesignup}>Sign Up</button>
       </div>
         </div>
-      {/* <div className="signbtn2">
-            <button onClick={handlesignup}>Sign Up</button>
-      </div> */}
+      
       </div>
       </div>
       <ToastContainer />

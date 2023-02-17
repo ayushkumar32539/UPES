@@ -14,7 +14,7 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: url("../../Assets/sign_bg.png");
+    background: url("https://img.freepik.com/free-photo/beautiful-tree-middle-field-covered-with-grass-with-tree-line-background_181624-29267.jpg");
     background-size: cover; 
     background-position: bottom center;
 }
@@ -61,7 +61,7 @@
 }
 .selectsignbtn{
     color:white;
-    background:#2B96CC;
+    background:#26c96a;
     width: 30vw;
     height: 2.5rem;
     font-size: 1.3rem;

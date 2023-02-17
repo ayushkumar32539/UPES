@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import "./Sign.css";
-import logo from "../../Assets/SSlogo.png";
+// import logo from "../../Assets/SSlogo.png";
 import SignIncomp from "../../Components/Signpage/SignIn/SignIncomp";
 import Signupcomp from "../../Components/Signpage/SignUp/Signupcomp";
 const Sign = () => {
   const [choice, setChoice] = useState("SignIn");
   return (
     <>
-      <img className="signlogo" src={logo} alt="img" />
       <div className="SignIn">
         <div className="signInbox">
           <div className="layer1">
             <div className="signIn_logo">
-              <img src={logo} alt="img" />
             </div>
             <span className="welcome">Welcomes You</span>
           </div>

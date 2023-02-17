@@ -64,11 +64,11 @@ const General = () => {
             <TableHead>
               <TableRow>
                 <TableCell>S.no.</TableCell>
-                <TableCell align="right">Patient Name</TableCell>
+                <TableCell align="right">Seller Name</TableCell>
                 <TableCell align="right">Age</TableCell>
-                <TableCell align="right">Aadhar No</TableCell>
+                <TableCell align="right">Quantity</TableCell>
                 <TableCell align="right">Email</TableCell>
-                <TableCell align="right">Bed ID</TableCell>
+                <TableCell align="right">Amount per Kg</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

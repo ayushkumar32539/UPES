@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
-import logo from '../../Assets/SSlogo.png';
+// import logo from '../../Assets/SSlogo.png';
 import About from '../../Components/Dashboard/About/About';
 import Bedstatus from '../../Components/Dashboard/Bed Status/Bedstatus';
 import Hosprefimg from "../../Assets/hosprefimg.png";
@@ -43,7 +43,7 @@ const Dashboard = () => {
     <div className='Dashboard'>
         <div className='headerdash'>
             <div className='logo'>
-                <img src={logo} alt="img"></img>
+                {/* <img src={logo} alt="img"></img> */}
             </div>
             <div className='dashh'>
                 <span>Dashboard</span>
@@ -53,11 +53,11 @@ const Dashboard = () => {
         <div className='dashsec1'>
                 <div onClick={(e) => handledashboardbtn("about")}className={clicked === "about"?"dashsec1_xy" : "dashsec1_xx" }>
                     <img src={leaf} alt="img"></img>
-                <span value="about"  className='colorx'>About</span>
+                <span value="about"  className='colorx'>Waste Disposal</span>
                 </div>
                 <div onClick={(e) => handledashboardbtn("bedstatus")} className={clicked === "bedstatus"?"dashsec1_xy" : "dashsec1_xx" }>
                 <img src={leaf} alt="img"></img>
-                <span className='colorx' value="bedstatus" >Bed status</span>
+                <span className='colorx' value="bedstatus" >Waste Recycling</span>
                 </div>
         </div>
         
@@ -75,7 +75,7 @@ const Dashboard = () => {
             </div>
             <div>
                {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Edit Details</button>}
-               {clicked === 'bedstatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Book a bed</button>}
+               {clicked === 'bedstatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Place Order</button>}
 
             </div>
         </div>

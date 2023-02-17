@@ -4,16 +4,16 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import SubscriptionsRoundedIcon from '@mui/icons-material/SubscriptionsRounded';
 import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import logo from "../../Assets/SSlogo.png";
+// import logo from "../../Assets/SSlogo.png";
 const Footer = () => {
   return (
     <>
       <div className="Footer">
-        <img src={logo} alt="img" />
+        {/* <img src={logo} alt="img" /> */}
         <div className="footerfields">
           <div className="follow">
             <div>
-              <span>Government of Rajasthan</span>
+              <span>UPES Dehradun</span>
               <span>
                 <PlaceOutlinedIcon sx={{ cursor: "pointer" }} />
               </span>
@@ -30,9 +30,8 @@ const Footer = () => {
             <SubscriptionsRoundedIcon sx={{ cursor: "pointer", height:"2rem",width:'2rem' }}/>
           </span>
           </div>
-          <span>Hospitals Associate</span>
-          <span>Health Services</span>
-          <span>Health Equipments</span>
+          <span>Project Associate</span>
+          <span>Services</span>
           <span>Login</span>
         </div>
       </div>

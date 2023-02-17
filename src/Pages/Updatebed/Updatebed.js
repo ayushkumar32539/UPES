@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 // import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import logo from "../../Assets/SSlogo.png";
+// import logo from "../../Assets/SSlogo.png";
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 const Updatebed = () => {
@@ -17,12 +17,12 @@ const Updatebed = () => {
 
   return (
     <div className='Updatebed Info'>
-      <img className="signlogo" src={logo} alt="img" />
+      {/* <img className="signlogo" src={logo} alt="img" /> */}
       <div className="center">
         <div className="incenter">
           <div className="layer1">
             <div className="signIn_logo">
-              <img src={logo} alt="img"/>
+              {/* <img src={logo} alt="img"/> */}
             </div>
             <span className="welcome">Welcomes You</span>
           </div>

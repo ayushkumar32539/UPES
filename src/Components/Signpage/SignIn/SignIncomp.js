@@ -8,23 +8,24 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 const SignIncomp = () => {
   const navigate = useNavigate();
   const [userId,setUserId] = useState("");
-  const [psswd,setPsswd] = useState("");
-  // const [hospid,setHospid] = useState('');
+  const [password,setPassword] = useState("");
+  const [role,setRole] = useState("");
   // let token;
   const handlesignin = (e) => {
     e.preventDefault();
     const data = {
       email:userId,
-      password:psswd
+      password:password,
+      role:role
     }
-    axios.post('https://sih-23.herokuapp.com/loginhospital',data)
+    axios.post('https://plasticwastemanage-production.up.railway.app/login',data)
     .then((res) => {
       console.log(res.data);
-      if(res.data.cookie_token){
-        localStorage.setItem("token",res.data.cookie_token);
-        localStorage.setItem("_id",res.data.hosId);
-        navigate('/Dashboard');
-      }
+      // if(res.data.cookie_token){
+      //   // localStorage.setItem("token",res.data.cookie_token);
+      //   // localStorage.setItem("_id",res.data.hosId);
+      // }
+      navigate('/Dashboard');
     })
     .catch((err) => {
       console.log(err);
@@ -48,11 +49,15 @@ const SignIncomp = () => {
             <div className="Userbox">
               <div className="text1" id="text">
                 <span></span>
-                <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="User Id" />
+                <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="Email" />
+              </div>
+              <div className="text1" id="text">
+                <span></span>
+                <input onChange={(e) => {setRole(e.target.value)}} value={role} placeholder="Role" />
               </div>
               <div className="text1">
                 <span></span>
-                <input onChange={(e) => {setPsswd(e.target.value)}} value={psswd} placeholder="Password" />
+                <input onChange={(e) => {setPassword(e.target.value)}} value={password} placeholder="Password" />
               </div>
               <div className="signbtn">
                 <button onClick={handlesignin}>Sign In</button>
