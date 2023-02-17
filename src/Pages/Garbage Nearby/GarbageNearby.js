@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./GarbageNearby.css";
-import Hosplist from "../../Components/hosplist/Hosplist";
+import Hosplist from "../../Components/sellerlist/Sellerlist";
 import Navbar from "../../Components/Navbar/Navbar";
 import axios from "axios";
 import Support from "../../Components/Support/Support";
@@ -9,7 +9,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 const GarbageNearby = () => {
-  const [hospdata, setHospdata] = useState([""]);
+  const [wastedata, setWastedata] = useState([""]);
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
   // const [happen, setHappen] = useState('');
@@ -18,7 +18,7 @@ const GarbageNearby = () => {
     axios
       .get("https://sih-23.herokuapp.com/all/hospitals")
       .then((res) => {
-        pincode === "" &&  city === "" && setHospdata(res.data);
+        pincode === "" &&  city === "" && setWastedata(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -32,8 +32,8 @@ const GarbageNearby = () => {
     .then((res) => {
       console.log(res.data)
       if(res.data){
-        setHospdata([""]);
-        setHospdata(res.data);
+        setWastedata([""]);
+        setWastedata(res.data);
 
       }
     })
@@ -45,8 +45,8 @@ const GarbageNearby = () => {
     .then((res) => {
       console.log(res.data)
       if(res.data){
-        setHospdata([""]);
-        setHospdata(res.data);
+        setWastedata([""]);
+        setWastedata(res.data);
 
       }
     })
@@ -95,8 +95,8 @@ const GarbageNearby = () => {
       </div>
       <div className="hosplisttt">
 
-        {hospdata &&
-          hospdata.map((val, i) => (
+        {wastedata &&
+          wastedata.map((val, i) => (
             <Hosplist
               email={val.email}
               hospid={val._id}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 // import logo from '../../Assets/SSlogo.png';
 import About from '../../Components/Dashboard/About/About';
-import Bedstatus from '../../Components/Dashboard/Bed Status/Bedstatus';
+import Bedstatus from '../../Components/Dashboard/Waste Status/Wastestatus';
 import Hosprefimg from "../../Assets/hosprefimg.png";
 import leaf from '../../Assets/leaf.png'
 import { useNavigate } from "react-router-dom";
