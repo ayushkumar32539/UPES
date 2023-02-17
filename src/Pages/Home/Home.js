@@ -9,8 +9,8 @@ import Chat from '../../Components/Chat/Chat'
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
-  const handlebedavailnavigate = () => {
-    navigate("/GARBAGENearby");
+  const handlegarbageavailnavigate = () => {
+    navigate("/GarbageNearby");
   }
 
   const handledistrictwise = () => {
@@ -35,7 +35,7 @@ const Home = () => {
         </div>
         </div>
         <div className='options'>
-          <div className='opchoice' onClick={handlebedavailnavigate}>Garbage</div>
+          <div className='opchoice' onClick={handlegarbageavailnavigate}>Garbage</div>
           <div id="hospitalchoice" className='opchoice'>GARBAGE</div>
           <div className='opchoice'>GARBAGE HANDLING</div>
         </div>

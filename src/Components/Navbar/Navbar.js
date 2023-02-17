@@ -63,7 +63,7 @@ const Navbar = ({defaulth}) => {
         </div>
         <div className='head'>
           <button className={defaulth === 'Home'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/');}} value="Home">Home</button>
-          <button className={defaulth === 'Hospitals Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/hospitalsnearby');}} value="Hospitals Nearby">Beds Availability</button>
+          <button className={defaulth === 'Garbage Nearby'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/garbagenearby');}} value="Garbage Nearby">Garbage Availability</button>
           <button className={defaulth === 'UserLogin'? 'selectedpgchoice' : 'onlychoice'} onClick={(e) => {navigate('/sign');}} value="Login">SignIn/SignUp</button>
           <div className='location'>
           {/* <span >Emergency</span> */}

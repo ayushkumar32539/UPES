@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./HospitalsNearby.css";
+import "./GarbageNearby.css";
 import Hosplist from "../../Components/hosplist/Hosplist";
 import Navbar from "../../Components/Navbar/Navbar";
 import axios from "axios";
@@ -8,7 +8,7 @@ import Footer from "../../Components/Footer/Footer";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
-const HospitalsNearby = () => {
+const GarbageNearby = () => {
   const [hospdata, setHospdata] = useState([""]);
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
@@ -113,4 +113,4 @@ const HospitalsNearby = () => {
   );
 };
 
-export default HospitalsNearby;
+export default GarbageNearby;

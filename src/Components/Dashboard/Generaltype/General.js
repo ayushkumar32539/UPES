@@ -11,9 +11,6 @@ import axios from "axios";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
 
-// function createData(serialno, name, phone, aadhar, bedId) {
-//   return { serialno, name, phone, aadhar, bedId };
-// }
 const General = () => {
   const [dash_list, setDash_list] = useState("");
   useEffect(() => {
@@ -36,8 +33,6 @@ const General = () => {
   });
 
   const deletecell = (val) => {
-    
-    console.log(`https://sih-23.herokuapp.com/bed/booking/${val}`);
     console.log(val);
     const url = `https://sih-23.herokuapp.com/bed/booking/${val}`;
     if (val) {
@@ -81,7 +76,7 @@ const General = () => {
                     <TableCell component="th" scope="row">
                       {i + 1}
                     </TableCell>
-                    <TableCell align="right">{val.patientName}</TableCell>
+                    <TableCell align="right">{val.sellerName}</TableCell>
                     <TableCell align="right">{val.age}</TableCell>
                     <TableCell align="right">{val.Adhar}</TableCell>
                     <TableCell align="right">{val.email}</TableCell>

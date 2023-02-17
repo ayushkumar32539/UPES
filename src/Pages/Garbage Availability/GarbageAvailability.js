@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./BedAvailability.css";
+import "./GarbageAvailability.css";
 import Hosprefimg from "../../Assets/hosprefimg.png";
 // import StarIcon from "@mui/icons-material/Star";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -22,7 +22,7 @@ import Select from "@mui/material/Select";
 import { useLocation } from "react-router";
 import axios from "axios";
 
-const BedAvailability = () => {
+const GarbageAvailability = () => {
   const location = useLocation();
 
   const otp1Ref = useRef(null);
@@ -112,7 +112,7 @@ const BedAvailability = () => {
       .put("https://sih-23.herokuapp.com/bed/bookingbed/verify", data)
       .then((res) => {
         console.log(res.data);
-        if (res.data === "your bed has been booked") {
+        if (res.data === "your deal has been booked") {
           console.log("Hurrah");
           // setStore("");
           setVerified("done");
@@ -367,7 +367,7 @@ const BedAvailability = () => {
 
           {verified !== "" && (
             <Dialog open={open} onClose={handleClose}>
-              <DialogTitle>Your bed has been successfully booked!</DialogTitle>
+              <DialogTitle>Your deal has been successfully booked!</DialogTitle>
               <DialogActions>
                 <Button onClick={handleClose}>Okay</Button>
               </DialogActions>
@@ -382,4 +382,4 @@ const BedAvailability = () => {
   );
 };
 
-export default BedAvailability;
+export default GarbageAvailability;
