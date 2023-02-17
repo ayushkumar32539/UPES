@@ -36,7 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2B96CC;
+    background-color: green;
     height: 10vh;
     width: 20vw;
     color:white;
@@ -64,5 +64,5 @@
 }
 
 .Navbar{
-    box-shadow: 7px 2px 10px 2px #2B96CC;
+    box-shadow: 7px 2px 10px 2px green;
 }
