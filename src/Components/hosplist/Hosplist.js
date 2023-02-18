@@ -35,7 +35,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
     <div className="Hosplist">
       <div className="inHosplist">
         <div className="hosplistimg">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2053&q=80" alt="img"></img>
+          <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/5585/production/_118539812_067369333.jpg" alt="img"></img>
         </div>
         <div className="hosplisttxt">
           <div className="hosplisttitle">
@@ -62,7 +62,7 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
             </div>
 
             <div className="line">
-              <span>Beds Available:</span>
+              <span>Garbage Available:</span>
               {beds_avail && (
                 <span className="bluetxt">
                   {beds_avail.bedData.generalType.availbility}(General) +{" "}
@@ -79,8 +79,8 @@ const Hosplist = ({ email, hospid, name, mobilenum, city }) => {
                  {disable === '' && <Button  color="success"sx={{width:"10rem"}} variant="contained"  onClick={(e) => {
               e.preventDefault();
               navigate("/bedavailability", { state: { hospid } });
-            }} >Book a bed</Button>}
-                 {disable === 'yes' && <Button disabled  color="success"sx={{width:"10rem"}} variant="contained">Book a bed</Button>}
+            }} >Checkout</Button>}
+                 {disable === 'yes' && <Button disabled  color="success"sx={{width:"10rem"}} variant="contained">Checkout</Button>}
 
           </span>
         </div>

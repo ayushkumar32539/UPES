@@ -35,7 +35,7 @@ const District = () => {
     <div className='General'>
         <Navbar/>
         <div className='district_head'>
-            <span>District Wise Bed Availability Status</span>
+            <span>District Wise Garbage Availability Status</span>
         </div>
         <div className='dist_h'>
         <div className='outtable '>
@@ -45,8 +45,8 @@ const District = () => {
           <TableRow>
             <TableCell>S.no.</TableCell>
             <TableCell align="right">District</TableCell>
-            <TableCell align="right">Beds Available</TableCell>
-            <TableCell align="right">No. of Hospitals</TableCell>
+            <TableCell align="right">Garbage Available</TableCell>
+            <TableCell align="right">No. of stations</TableCell>
             {/* <TableCell align="right">Bed ID</TableCell> */}
           </TableRow>
         </TableHead>

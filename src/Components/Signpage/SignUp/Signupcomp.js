@@ -14,7 +14,7 @@ const Signupcomp = () => {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState();
+  const [role, setRole] = useState("");
   const [pincode, setPincode] = useState();
 
   // let token;
@@ -70,11 +70,11 @@ const Signupcomp = () => {
             <div className="ht">Role</div>
             {/* <div className="rradio">
               <div>
-                <input onChange={(e) => {setRole(true)}}  type="radio" value="governmenttype" name="ht" />
+                <input onChange={(e) => {setRole(true)}}  type="radio" value="VENDER" name="ht" />
                 <label htmlFor="governmenttype">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole(false)}}  type="radio" value="privatetype" name="ht" />
+                <input onChange={(e) => {setRole(false)}}  type="radio" value="SELLER" name="ht" />
                 <label htmlFor="privatetype">Seller</label>
               </div>
             </div> */}

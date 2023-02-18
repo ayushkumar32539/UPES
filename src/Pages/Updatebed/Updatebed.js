@@ -1,11 +1,10 @@
 import React  from "react";
 import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
-// import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-// import logo from "../../Assets/SSlogo.png";
 import { useNavigate } from "react-router-dom";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 // import axios from "axios";
 const Updatebed = () => {
   const navigate = useNavigate(); 
@@ -17,12 +16,10 @@ const Updatebed = () => {
 
   return (
     <div className='Updatebed Info'>
-      {/* <img className="signlogo" src={logo} alt="img" /> */}
       <div className="center">
         <div className="incenter">
           <div className="layer1">
             <div className="signIn_logo">
-              {/* <img src={logo} alt="img"/> */}
             </div>
             <span className="welcome">Welcomes You</span>
           </div>
@@ -32,27 +29,44 @@ const Updatebed = () => {
           <div className="layer3_1">
             <div className="input2">
               <div className="ininput2">
-                <span className="bed_type">Bed Type</span>
+                <span className="bed_type">Garbage Type</span>
                 <div className="divisionbedtype">
                   <div className="general">
-                    <span className="txt">General</span>
+                    {/* <span className="txt">Origin of Waste</span> */}
                     <div className="generalin">
-                      <HotelIcon sx={{ height: "5vh", width: "3vw" }} />
-                      <TextField
+                      {/* <HotelIcon sx={{ height: "5vh", width: "3vw" }} /> */}
+                      {/* <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Available Quantity"
+                        label="Origin of waste"
                         size="small"
                         variant="outlined"
-                        type='number'
-                      />
+                        type='text'
+                      /> */}
+
+<FormControl fullWidth>
+
+<InputLabel id="demo-simple-select-label">Origin of Waste</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    // value={originofwaste}
+    label="Types of waste"
+    // onChange={handleChange}
+    >
+    {/* <MenuItem value={Industrial}>Industrial</MenuItem> */}
+    {/* <MenuItem value={Household}>Household</MenuItem> */}
+    {/* <MenuItem value={Market}>Market</MenuItem> */}
+    {/* <MenuItem value={Office}>Office</MenuItem> */}
+
+  </Select>
+    </FormControl>
                     </div>
                     <div className="generalin">
-                      <CurrencyRupeeIcon sx={{ height: "5vh", width: "3vw" }} />
                       <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Price/Bed"
+                        label="Amount"
                         size="small"
                         variant="outlined"
                         type='number'
@@ -61,25 +75,40 @@ const Updatebed = () => {
                     
                   </div>
                   <div className="special">
-                    <span className="txt">Special</span>
                     <div className="generalin">
-                      <HotelIcon sx={{ height: "5vh", width: "3vw" }} />
-                      <TextField
+                      {/* <HotelIcon sx={{ height: "5vh", width: "3vw" }} /> */}
+                      {/* <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Available Quantity"
+                        label="Types of waste"
                         size="small"
                         variant="outlined"
                         type='number'
                
-                      />
+                      /> */}
+<FormControl fullWidth>
+
+<InputLabel id="demo-simple-select-label">Types of Waste</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    // value={typesofwaste}
+    label="Types of waste"
+    // onChange={handleChange}
+    >
+    {/* <MenuItem value={Organic}>Organic</MenuItem> */}
+    {/* <MenuItem value={Plastic}>Plastic</MenuItem> */}
+    {/* <MenuItem value={Paper}>Paper</MenuItem> */}
+    {/* <MenuItem value={Metal}>Metal</MenuItem> */}
+
+  </Select>
+    </FormControl>
                     </div>
                     <div className="generalin">
-                      <CurrencyRupeeIcon sx={{ height: "5vh", width: "3vw" }} />
                       <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Price/Bed"
+                        label="Quantity in Kg"
                         size="small"
                         variant="outlined"
                         type='number'
@@ -92,8 +121,7 @@ const Updatebed = () => {
             </div>
             <div className="input3">
               <div className="ininput3">
-              <span className="txt" id='otherfacilites'>Other Facilites</span>
-              <textarea></textarea>
+             
 
               </div>            
             </div>

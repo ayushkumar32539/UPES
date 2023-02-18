@@ -51,6 +51,16 @@ const SignIncomp = () => {
                 <span></span>
                 <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="Email" />
               </div>
+              {/* <div className="rradio">
+              <div>
+                <input onChange={(e) => {setRole(true)}}  type="radio" value="VENDER" name="ht" />
+                <label htmlFor="governmenttype">Vendor</label>
+              </div>
+              <div>
+                <input onChange={(e) => {setRole(false)}}  type="radio" value="SELLER" name="ht" />
+                <label htmlFor="privatetype">Seller</label>
+              </div>
+            </div> */}
               <div className="text1" id="text">
                 <span></span>
                 <input onChange={(e) => {setRole(e.target.value)}} value={role} placeholder="Role" />

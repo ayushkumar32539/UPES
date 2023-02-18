@@ -35,7 +35,7 @@ const Bedstatus = () => {
   return (
     <div className='bedstatus About'>
       <div className="dash_headingg">
-        <span>Bed Availability</span>
+        <span>Garbage Availability</span>
       </div>
 
       <div className='dash_status'>
