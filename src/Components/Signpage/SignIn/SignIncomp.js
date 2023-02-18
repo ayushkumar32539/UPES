@@ -10,7 +10,8 @@ const SignIncomp = () => {
   const [userId,setUserId] = useState("");
   const [password,setPassword] = useState("");
   const [role,setRole] = useState("");
-  const [token,setToken]=useState('')
+// eslint-disable-next-line
+  const [token,setToken]=useState('');
   // let token;
   const handlesignin = (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ const SignIncomp = () => {
     .then((res) => {
         if(res.data.data.token){
           console.log(token)
+          // eslint-disable-next-line
           {navigate('/Dashboard');}
           localStorage.setItem("token",res.data.data.token);
         //   // localStorage.setItem("_id",res.data.hosId);
@@ -57,16 +59,16 @@ const SignIncomp = () => {
               </div>
               <div className="rradio">
               <div>
-                <input onChange={(e) => {setRole('VENDOR')}}  type="radio"  value={role} name="ht" id='role' />
-                <label htmlFor="ht">Vendor</label>
+                <input onChange={(e) => {setRole('VENDOR')}} className="radiobutton" type="radio"  value={role} name="ht" id='role' />
+                <label className='radiolabels' htmlFor="ht">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole('SELLER')}}  type="radio" value={role} name="ht" id='role' />
-                <label htmlFor="ht">Seller</label>
+                <input onChange={(e) => {setRole('SELLER')}} className="radiobutton" type="radio" value={role} name="ht" id='role' />
+                <label className='radiolabels' htmlFor="ht">Seller</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole('ADMIN')}}  type="radio" value={role} name="ht" id='role' />
-                <label htmlFor="ht">Admin</label>
+                <input onChange={(e) => {setRole('ADMIN')}} className="radiobutton" type="radio" value={role} name="ht" id='role' />
+                <label className='radiolabels' htmlFor="ht">Admin</label>
               </div>
             </div>
               {/* <div className="text1" id="text">

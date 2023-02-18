@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 // import logo from '../../Assets/SSlogo.png';
 import About from '../../Components/Dashboard/About/About';
-import wastestatus from '../../Components/Dashboard/Waste Status/Wastestatus';
+// import wastestatus from '../../Components/Dashboard/Waste Status/Wastestatus';
 import Hosprefimg from "../../Assets/hosprefimg.png";
 import leaf from '../../Assets/leaf.png'
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const [dash_id, setDash_id] = useState("");
     const [dash_result, setDash_result] = useState("");
-    const [token,setToken]=useState('');
+    // const [token,setToken]=useState('');
     // const [dash_booking, setDash_booking] = useState("xxx");
      // eslint-disable-next-line
     useEffect(() => {

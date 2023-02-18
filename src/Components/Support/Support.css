@@ -4,7 +4,7 @@
     align-items: center;
     /* width: 98.9vw; */
     height: 25vh;
-    background: url('../../Assets/support_bg.png');
+    /* background: url('../../Assets/support_bg.png'); */
 }
 .iconbox{
     display: flex;
@@ -22,7 +22,7 @@
     height: 5rem;
 }
 .Support span{
-    background:#2B96CC;
+    background:green;
     color: white;
     width: 17rem;
     height:2.5rem;

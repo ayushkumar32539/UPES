@@ -18,6 +18,7 @@ const Sellerlist = ({
   contactInfo
 }) => {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   const [waste_avail, setwaste_avail] = useState("");
   const [disable, setDisable] = useState("");
 

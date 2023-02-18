@@ -2,9 +2,9 @@ import React, { useState }  from "react";
 import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
 // import { useLocalStorage } from "./";
-import HotelIcon from "@mui/icons-material/Hotel";
-import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-import { useNavigate } from "react-router-dom";
+// import HotelIcon from "@mui/icons-material/Hotel";
+// import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+// import { useNavigate } from "react-router-dom";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -17,7 +17,7 @@ const UpdateWaste = () => {
   // const [token,setToken]=useState('');
 
 
-  const navigate = useNavigate(); 
+  // const navigate = useNavigate(); 
   const handleupdatesubmit= (e) => {
     e.preventDefault();
     const token=localStorage.getItem('token')

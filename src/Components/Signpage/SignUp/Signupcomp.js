@@ -73,12 +73,12 @@ const Signupcomp = () => {
             <div className="ht">Role</div>
             <div className="rradio">
               <div>
-                <input onChange={(e) => {setRole('VENDOR')}}  type="radio"  value={role} name="ht" id='role' />
-                <label htmlFor="ht">Vendor</label>
+                <input onChange={(e) => {setRole('VENDOR')}}  className="radiobutton" type="radio"  value={role} name="ht" id='role' />
+                <label className='radiolabels' htmlFor="ht">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole('SELLER')}}  type="radio" value={role} name="ht" id='role' />
-                <label htmlFor="ht">Seller</label>
+                <input onChange={(e) => {setRole('SELLER')}} className="radiobutton" type="radio" value={role} name="ht" id='role' />
+                <label className='radiolabels' htmlFor="ht">Seller</label>
               </div>
             </div>
              {/* <div className="text2">

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Home.css'
 import Navbar from '../../Components/Navbar/Navbar';
-import Slider from '../../Components/Slider/Slider';
+// import Slider from '../../Components/Slider/Slider';
 import Footer from '../../Components/Footer/Footer';
 import Support from '../../Components/Support/Support';
 import Chat from '../../Components/Chat/Chat'
@@ -12,9 +12,9 @@ const Home = () => {
     navigate("/GarbageNearby");
   }
 
-  const handledistrictwise = () => {
-    navigate('/districtwise')
-  }
+  // const handledistrictwise = () => {
+  //   navigate('/districtwise')
+  // }
   return (
     <div className='Home'>
       <div className='basecover'>
@@ -39,10 +39,10 @@ const Home = () => {
           <div className='opchoice'>GARBAGE HANDLING</div>
         </div>
         <div className='sec2'>
-          <span className='hosp_head'>Waste Management</span>
+          {/* <span className='hosp_head'>Waste Management</span> */}
 
           {/* <Slider/> */}
-          <div className='images'>
+          {/* <div className='images'>
             <div className='hospt_img'>
             <img src='https://www.rts.com/wp-content/uploads/2019/11/23405746_1953349674932539_6655836021756150616_o-1-1024x683.jpg' alt="img"></img>
             <div className='combine'>
@@ -81,7 +81,7 @@ const Home = () => {
             </div>
             </div>
 
-          </div>
+          </div> */}
           <Chat/>
           <Support/>
           <Footer/>
