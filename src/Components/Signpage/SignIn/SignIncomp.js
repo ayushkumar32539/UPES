@@ -10,6 +10,7 @@ const SignIncomp = () => {
   const [userId,setUserId] = useState("");
   const [password,setPassword] = useState("");
   const [role,setRole] = useState("");
+  const [token,setToken]=useState('')
   // let token;
   const handlesignin = (e) => {
     e.preventDefault();
@@ -22,12 +23,10 @@ const SignIncomp = () => {
     console.log(data);
     axios.post('https://plasticwastemanage-production.up.railway.app/login',data)
     .then((res) => {
-      console.log(res.data.data.token)
         if(res.data.data.token){
-          // localStorage.getItem("token",res.data.token);
-          
-          // if(res.data.token)
+          console.log(token)
           {navigate('/Dashboard');}
+          localStorage.setItem("token",res.data.data.token);
         //   // localStorage.setItem("_id",res.data.hosId);
         } 
       

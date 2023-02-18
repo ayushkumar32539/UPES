@@ -32,7 +32,7 @@ const Info = () => {
        },
        "otherFacilities":otherfacility
     }
-    axios.put('https://sih-23.herokuapp.com/addbed',data)
+    axios.put('https://sih-23.herokuapp.com/addwaste',data)
     .then((res) => {
       console.log(res.data);
       navigate('/Dashboard');
@@ -72,8 +72,8 @@ const Info = () => {
             </div> */}
             <div className="input2">
               <div className="ininput2">
-                <span className="bed_type">Bed Type</span>
-                <div className="divisionbedtype">
+                <span className="waste_type">waste Type</span>
+                <div className="divisionwastetype">
                   <div className="general">
                     <span className="txt">General</span>
                     <div className="generalin">
@@ -94,7 +94,7 @@ const Info = () => {
                       <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Price/Bed"
+                        label="Price/waste"
                         size="small"
                         variant="outlined"
                         type='number'
@@ -124,7 +124,7 @@ const Info = () => {
                       <TextField
                         id="outlined-basic"
                         sx={{ width: "30vw" }}
-                        label="Price/Bed"
+                        label="Price/waste"
                         size="small"
                         variant="outlined"
                         type='number'

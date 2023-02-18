@@ -56,7 +56,7 @@ const GarbageAvailability = () => {
   const [store, setStore] = useState("");
 // eslint-disable-next-line
   const [hospid, setHospid] = useState(location.state.hospid);
-  const [bedtype, setBedtype] = useState("");
+  const [Wastetype, setWastetype] = useState("");
   const [result, setResult] = useState();
   const [useremailid, setUseremailid] = useState("");
   const [username, setUsername] = useState("");
@@ -74,8 +74,8 @@ const GarbageAvailability = () => {
     setOpen(false);
   };
 
-  const handlebedtype = (event) => {
-    setBedtype(event.target.value);
+  const handleWastetype = (event) => {
+    setWastetype(event.target.value);
   };
 
   useEffect(() => {
@@ -103,13 +103,13 @@ const GarbageAvailability = () => {
       parseInt(pin6);
 
     const data = {
-      bedAllotId: store.bedAllotId,
-      bedId: store.bedId,
+      WasteAllotId: store.WasteAllotId,
+      WasteId: store.WasteId,
       otp: value,
     };
     // console.log(data);
     axios
-      .put("https://sih-23.herokuapp.com/bed/bookingbed/verify", data)
+      .put("https://sih-23.herokuapp.com/Waste/bookingWaste/verify", data)
       .then((res) => {
         console.log(res.data);
         if (res.data === "your deal has been booked") {
@@ -124,7 +124,7 @@ const GarbageAvailability = () => {
       });
   };
 
-  const handlebedbooking = () => {
+  const handleWastebooking = () => {
     setVerified("");
     setPin1("");
     setPin2("");
@@ -134,15 +134,15 @@ const GarbageAvailability = () => {
     setPin6("");
     handleClickOpen();
     const data2 = {
-      patientName: username,
+      BuyerName: username,
       Adhar: aadharno,
       email: useremailid,
       age: parseInt(userage),
-      type: bedtype,
+      type: Wastetype,
     };
     // console.log(data2);
     axios
-      .put(`https://sih-23.herokuapp.com/bed/booking/${hospid}`, data2)
+      .put(`https://sih-23.herokuapp.com/Waste/booking/${hospid}`, data2)
       .then((res) => {
         setStore(res.data);
         console.log(res.data);
@@ -150,7 +150,7 @@ const GarbageAvailability = () => {
       .catch((err) => {
         console.log(err.response.data);
         if(err.response.data === 'adhar is already exist'){
-          toast.error("Bed has been already booked with this aadhar no.");
+          toast.error("Waste has been already booked with this aadhar no.");
         }
         else{
           toast.error("Enter valid details");
@@ -159,7 +159,7 @@ const GarbageAvailability = () => {
   };
 
   return (
-    <div className="BedAvailability">
+    <div className="garbageavailability">
       <Navbar defaulth={"Garbage Nearby"} />
       <div className="availablesec">
         {<div className="secdiv1">
@@ -184,45 +184,45 @@ const GarbageAvailability = () => {
           <div className="otherfacility loc">
             <span className="loc">Other Facility:</span>
             {result && (
-              <span className="ans">{result.bedData.otherFacilities}</span>
+              <span className="ans">{result.WasteData.otherFacilities}</span>
             )}
           </div>
-          <div className="BedsAvailable loc">
-            <span>Beds Available:</span>
+          <div className="WastesAvailable loc">
+            <span>Wastes Available:</span>
             {result && (
               <span className="ans">
-                {result.bedData.generalType.availbility}(General) +{" "}
-                {result.bedData.specialType.availbility}(Special)
+                {result.WasteData.generalType.availbility}(General) +{" "}
+                {result.WasteData.specialType.availbility}(Special)
               </span>
             )}
           </div>
-          <div className="BedsPrice loc">
-            <span>Bed Type:</span>
+          <div className="WastesPrice loc">
+            <span>Waste Type:</span>
 
             <FormControl sx={{ m: 1, minWidth: 180 }} size="small">
-              <InputLabel id="demo-select-small">Bed Type</InputLabel>
+              <InputLabel id="demo-select-small">Waste Type</InputLabel>
               <Select
                 labelId="demo-select-small"
                 id="demo-select-small"
-                value={bedtype}
-                label="Bed Type"
-                onChange={handlebedtype}
+                value={Wastetype}
+                label="Waste Type"
+                onChange={handleWastetype}
               >
                 <MenuItem value="General">General</MenuItem>
                 <MenuItem value="Special">Special</MenuItem>
               </Select>
             </FormControl>
           </div>
-          <div className="BedsPrice loc">
-            <span>Price For Bed:</span>
-            {result && bedtype === "General" && (
+          <div className="WastesPrice loc">
+            <span>Price For Waste:</span>
+            {result && Wastetype === "General" && (
               <span className="ans">
-                &#8377;{result.bedData.generalType.pricePerbad}
+                &#8377;{result.WasteData.generalType.pricePerbad}
               </span>
             )}
-            {result && bedtype === "Special" && (
+            {result && Wastetype === "Special" && (
               <span className="ans">
-                &#8377;{result.bedData.specialType.pricePerbad}
+                &#8377;{result.WasteData.specialType.pricePerbad}
               </span>
             )}
             <div className="loc">
@@ -241,7 +241,7 @@ const GarbageAvailability = () => {
           </div>
 
           <div className="loc">
-            <span>Patient Name:</span>
+            <span>Buyer Name:</span>
             <input
               className="ans xxx"
               type="text"
@@ -250,7 +250,7 @@ const GarbageAvailability = () => {
                 setUsername(e.target.value);
               }}
             ></input>
-            <span>Patient Age:</span>
+            <span>Buyer Age:</span>
             <input
               className="ans xxx"
               type="number"
@@ -272,13 +272,13 @@ const GarbageAvailability = () => {
               }}
             ></input>
           </div>
-          <div className="bookbed">
+          <div className="bookWaste">
             <Button
-              onClick={handlebedbooking}
+              onClick={handleWastebooking}
               variant="contained"
               sx={{ marginTop: "2vh", fontSize: "1.5rem", width: "30vw" }}
             >
-              Book a Bed
+              Buy
             </Button>
           </div>
 

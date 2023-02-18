@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import './Bedstatus.css';
+import './wastestatus.css';
 import General from '../Generaltype/General';
 import Special from '../Specialtype/Special';
 
-const Bedstatus = () => {
+const wastestatus = () => {
   const [dash_id, setDash_id] = useState("");
   const [dash_result, setDash_result] = useState("");
   const [type_select, setType_select] = useState("General");
@@ -18,7 +18,7 @@ const Bedstatus = () => {
   useEffect(() => {
     setDash_id(localStorage.getItem('_id'));
     if(dash_id){
-        axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
+        axios.get(``)
         .then((res)=>{
             // console.log(res.data)
             setDash_result(res.data);
@@ -33,7 +33,7 @@ const Bedstatus = () => {
 
 
   return (
-    <div className='bedstatus About'>
+    <div className='wastestatus About'>
       <div className="dash_headingg">
         <span>Garbage Availability</span>
       </div>
@@ -45,11 +45,11 @@ const Bedstatus = () => {
 
       <div className="dash_txt">
         <span>General:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.bedData.generalType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.wasteData.generalType.availbility}</span>}
       </div>
       <div className="dash_txt">
         <span>Special:&nbsp;&nbsp;</span>
-        {dash_result && <span className="ans">{dash_result.bedData.specialType.availbility}</span>}
+        {dash_result && <span className="ans">{dash_result.wasteData.specialType.availbility}</span>}
       </div>
 
 
@@ -63,4 +63,4 @@ const Bedstatus = () => {
   )
 }
 
-export default Bedstatus
+export default wastestatus
