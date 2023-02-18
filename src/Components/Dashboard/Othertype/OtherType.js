@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./General.css";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,24 +9,24 @@ import Paper from "@mui/material/Paper";
 import axios from "axios";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
-
 // function createData(serialno, name, phone, aadhar, bedId) {
 //   return { serialno, name, phone, aadhar, bedId };
 // }
-const General = () => {
+
+const OtherType= () => {
   const [dash_list, setDash_list] = useState("");
+
   useEffect(() => {
-    
     const data = {
       cookie_token: localStorage.getItem("token"),
     };
     axios
       .put(
-        "https://sih-23.herokuapp.com/bed/hospital/bookingbeds/General",
+        "https://sih-23.herokuapp.com/bed/hospital/bookingbeds/Special",
         data
       )
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setDash_list(res.data);
       })
       .catch((err) => {
@@ -36,7 +35,6 @@ const General = () => {
   });
 
   const deletecell = (val) => {
-    
     console.log(`https://sih-23.herokuapp.com/bed/booking/${val}`);
     console.log(val);
     const url = `https://sih-23.herokuapp.com/bed/booking/${val}`;
@@ -85,7 +83,8 @@ const General = () => {
                     <TableCell align="right">{val.age}</TableCell>
                     <TableCell align="right">{val.Adhar}</TableCell>
                     <TableCell align="right">{val.email}</TableCell>
-                    <TableCell align="right">{val._id}</TableCell>
+                    <TableCell align="right">{val.hospitalId}</TableCell>
+
                     <TableCell
                       className="ddlete"
                       onClick={() => deletecell(val._id)}
@@ -103,4 +102,4 @@ const General = () => {
   );
 };
 
-export default General;
+export default OtherType;

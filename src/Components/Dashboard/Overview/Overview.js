@@ -9,8 +9,8 @@ const Overview = () => {
 
     const [daata,setDaata] = useState('');
     const data = [
-        { name: 'special beds', value:daata.special},
-        { name: 'general beds', value:daata.general}, 
+        { name: 'other waste', value:daata.other},
+        { name: 'plastic waste', value:daata.plastic}, 
         ];
         
 useEffect(() => {
@@ -38,10 +38,10 @@ useEffect(() => {
       
             </div>
             <div className="insec11 xd2">
-            <span className="ccc">General Beds</span>
+            <span className="ccc">plastic waste</span>
             </div>
             <div className="insec11 xd3">
-                <span className="ccc">Special Beds</span>
+                <span className="ccc">other waste</span>
             </div>
         </div> */}
         <div className="dashhsec2">

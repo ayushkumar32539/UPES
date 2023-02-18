@@ -15,8 +15,8 @@ const Info = () => {
   const [otherfacility, setOtherfacility] = useState('');
   const [generalquant, setGeneralquant] = useState('');
   const [specialquant, setSpecialquant] = useState('');
-  const [generalbedprice, setGeneralbedprice] = useState('');
-  const [specialbedprice, setSpecialbedprice] = useState('');
+  const [generalplasticprice, setgeneralplasticprice] = useState('');
+  const [specialprice, setSpecialprice] = useState('');
   let token = localStorage.getItem("token");
   const handleinfosubmit = (e) => {
     e.preventDefault();
@@ -24,11 +24,11 @@ const Info = () => {
       "cookie_token":token,
        "generalType":{
         "availbility": parseInt(generalquant),
-        "pricePerbad": parseInt(generalbedprice)
+        "pricePerKg": parseInt(generalplasticprice)
        },
        "specialType":{
         "availbility": parseInt(specialquant),
-        "pricePerbad": parseInt(specialbedprice)
+        "pricePerKg": parseInt(specialprice)
        },
        "otherFacilities":otherfacility
     }
@@ -98,8 +98,8 @@ const Info = () => {
                         size="small"
                         variant="outlined"
                         type='number'
-                        value={generalbedprice}
-                        onChange={(e) => {setGeneralbedprice(e.target.value)}}
+                        value={generalplasticprice}
+                        onChange={(e) => {setgeneralplasticprice(e.target.value)}}
                       />
                     </div>
                     
@@ -128,8 +128,8 @@ const Info = () => {
                         size="small"
                         variant="outlined"
                         type='number'
-                        value={specialbedprice}
-                        onChange={(e) => {setSpecialbedprice(e.target.value)}}
+                        value={specialprice}
+                        onChange={(e) => {setSpecialprice(e.target.value)}}
                       />
                     </div>
                   </div>

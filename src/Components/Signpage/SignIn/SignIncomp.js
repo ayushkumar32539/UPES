@@ -20,12 +20,15 @@ const SignIncomp = () => {
     }
     axios.post('https://plasticwastemanage-production.up.railway.app/login',data)
     .then((res) => {
-      console.log(res.data);
-      // if(res.data.cookie_token){
-      //   // localStorage.setItem("token",res.data.cookie_token);
-      //   // localStorage.setItem("_id",res.data.hosId);
-      // }
-      navigate('/Dashboard');
+      console.log(res.data.data.token)
+        if(res.data.data.token){
+          // localStorage.getItem("token",res.data.token);
+          
+          // if(res.data.token)
+          {navigate('/Dashboard');}
+        //   // localStorage.setItem("_id",res.data.hosId);
+        } 
+      
     })
     .catch((err) => {
       console.log(err);
