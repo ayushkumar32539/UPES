@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 // import logo from '../../Assets/SSlogo.png';
 import About from '../../Components/Dashboard/About/About';
-import Bedstatus from '../../Components/Dashboard/Waste Status/Wastestatus';
+import wastestatus from '../../Components/Dashboard/Waste Status/Wastestatus';
 import Hosprefimg from "../../Assets/hosprefimg.png";
 import leaf from '../../Assets/leaf.png'
 import { useNavigate } from "react-router-dom";
@@ -22,7 +22,7 @@ const Dashboard = () => {
           .then((res)=>{
             //   console.log(res.data)
               setDash_result(res.data);
-            //   dash_result && console.log(dash_result.dataHos);
+            //   dash_result && console.log(dash_result.dataWaste);
           })
           .catch((err)=>{
               console.log(err);
@@ -55,27 +55,27 @@ const Dashboard = () => {
                     <img src={leaf} alt="img"></img>
                 <span value="about"  className='colorx'>Waste Disposal</span>
                 </div>
-                <div onClick={(e) => handledashboardbtn("bedstatus")} className={clicked === "bedstatus"?"dashsec1_xy" : "dashsec1_xx" }>
+                <div onClick={(e) => handledashboardbtn("wastestatus")} className={clicked === "wastestatus"?"dashsec1_xy" : "dashsec1_xx" }>
                 <img src={leaf} alt="img"></img>
-                <span className='colorx' value="bedstatus" >Waste Recycling</span>
+                <span className='colorx' value="wastestatus" >Waste Recycling</span>
                 </div>
         </div>
         
         <div className='dashsec2'>
            {clicked==="about" &&  <About/>}
-           {clicked==="bedstatus" &&  <Bedstatus/>}
+           {clicked==="wastestatus" &&  <wastestatus/>}
         </div>
         <div className='dashsec3'>
             <div className='dash_img'>
                 <img src={Hosprefimg} alt="img"></img>
             </div>
             <div className='img_below'>
-            {dash_result && <span className="main">{dash_result.dataHos.name}</span>}
-            {dash_result && <span className="main">{dash_result.dataHos.city}</span>}
+            {dash_result && <span className="main">{dash_result.dataWaste.name}</span>}
+            {dash_result && <span className="main">{dash_result.dataWaste.city}</span>}
             </div>
             <div>
                {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Edit Details</button>}
-               {clicked === 'bedstatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Place Order</button>}
+               {clicked === 'wastestatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Place Order</button>}
 
             </div>
         </div>

@@ -1,59 +1,64 @@
 import React, { useEffect, useState } from "react";
 import "./GarbageNearby.css";
-import Hosplist from "../../Components/sellerlist/Sellerlist";
+// import Hosplist from "../../Components/sellerlist/Sellerlist";
 import Navbar from "../../Components/Navbar/Navbar";
 import axios from "axios";
 import Support from "../../Components/Support/Support";
 import Footer from "../../Components/Footer/Footer";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Sellerlist from "../../Components/sellerlist/Sellerlist";
 
 const GarbageNearby = () => {
-  const [wastedata, setWastedata] = useState([""]);
+  const [wastedata, setWastedata] = useState();
   const [pincode, setPincode] = useState('');
   const [city, setCity] = useState('');
   // const [happen, setHappen] = useState('');
 
    useEffect(() => {
     axios
-      .get("https://sih-23.herokuapp.com/all/hospitals")
+      .get("https://plasticwastemanage-production.up.railway.app/data/getSellData")
       .then((res) => {
-        pincode === "" &&  city === "" && setWastedata(res.data);
+        console.log(res)
+        setWastedata(res.data.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  });
+  },[]);
 
 
 
-  const handlefilter = () =>{
-    pincode !== "" && axios.get(`https://sih-23.herokuapp.com/all/hospitalsby/${pincode}`)
-    .then((res) => {
-      console.log(res.data)
-      if(res.data){
-        setWastedata([""]);
-        setWastedata(res.data);
+  // const handlefilter = () =>{
+  //   pincode !== "" && axios.get(`https://sih-23.herokuapp.com/all/hospitalsby/${pincode}`)
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     if(res.data){
+  //       setWastedata([""]);
+  //       setWastedata(res.data);
 
-      }
-    })
-    .catch((err)=> {
-      console.log(err);
-    })
+  //     }
+  //   })
+  //   .catch((err)=> {
+  //     console.log(err);
+  //   })
 
-    city !== "" &&  axios.get(`https://sih-23.herokuapp.com/all/hospitals/${city}`)
-    .then((res) => {
-      console.log(res.data)
-      if(res.data){
-        setWastedata([""]);
-        setWastedata(res.data);
+  //   city !== "" &&  axios.get(`https://sih-23.herokuapp.com/all/hospitals/${city}`)
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     if(res.data){
+  //       setWastedata([""]);
+  //       setWastedata(res.data);
 
-      }
-    })
-    .catch((err)=> {
-      console.log(err);
-    })
+  //     }
+  //   })
+  //   .catch((err)=> {
+  //     console.log(err);
+  //   })
 
+
+  // }
+  const handlefilter=()=>{
 
   }
 
@@ -78,8 +83,8 @@ const GarbageNearby = () => {
           size="small"
           value={city}
           onChange={(e) => setCity(e.target.value)}
-        />
-        <Button variant="contained" onClick={handlefilter}>Filter Out</Button>{" "}
+        /> 
+         <Button variant="contained" onClick={handlefilter}>Filter Out</Button>{" "}
       </div>
 
       <div className="hrline">
@@ -95,14 +100,18 @@ const GarbageNearby = () => {
       </div>
       <div className="hosplisttt">
 
-        {wastedata &&
+        {wastedata && 
           wastedata.map((val, i) => (
-            <Hosplist
-              email={val.email}
-              hospid={val._id}
-              name={val.name}
-              city={val.city}
-              mobilenum={val.mobileNum}
+            <Sellerlist key={i}
+            name={val.name}
+              wasteFrom={val.wasteFrom}
+              wasteType={val.wasteType}
+              weightInKg={val.weightInKg}
+              pricePerKg={val.pricePerKg}
+              contactInfo={val.seller[0]}
+                
+              
+              se
             />
           ))}
       </div>

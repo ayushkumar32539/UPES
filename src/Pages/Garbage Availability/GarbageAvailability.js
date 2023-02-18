@@ -160,7 +160,7 @@ const GarbageAvailability = () => {
 
   return (
     <div className="BedAvailability">
-      <Navbar defaulth={"Hospitals Nearby"} />
+      <Navbar defaulth={"Garbage Nearby"} />
       <div className="availablesec">
         {<div className="secdiv1">
           <img src={Hosprefimg} alt="img"></img>
