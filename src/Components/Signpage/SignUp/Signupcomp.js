@@ -36,6 +36,8 @@ const Signupcomp = () => {
       console.log(res.data);
       if(res.data.token){     
         localStorage.setItem("token",res.data.token);
+        console.log(res.data.token)
+        
         // localStorage.setItem("_id",res.data.save._id);
         navigate('/Info');
       }
