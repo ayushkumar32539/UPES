@@ -84,6 +84,14 @@ const GarbageNearby = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         /> 
+         <TextField
+          label="Waste Type"
+          id="outlined-size-small"
+          defaultValue=""
+          size="small"
+          // value={waste}
+          onChange={(e) => setCity(e.target.value)}
+        /> 
          <Button variant="contained" onClick={handlefilter}>Filter Out</Button>{" "}
       </div>
 

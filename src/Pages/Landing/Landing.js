@@ -16,7 +16,7 @@ const Landing = () => {
         <div className='homepage'>
           <h1 className='heading '>EcoPlast</h1>
           <div className="buttons">
-          <button className="dispose-waste" onClick={handleDispose}>Dispose Waste</button>
+          <button className="dispose-waste" onClick={handleDispose}>Segeregation</button>
          <button className="recycle-waste" onClick={handleRecycle}>Recycle Waste</button>
           </div>
         </div>
