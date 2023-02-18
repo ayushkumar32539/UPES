@@ -13,11 +13,13 @@ const SignIncomp = () => {
   // let token;
   const handlesignin = (e) => {
     e.preventDefault();
+
     const data = {
       email:userId,
       password:password,
       role:role
     }
+    console.log(data);
     axios.post('https://plasticwastemanage-production.up.railway.app/login',data)
     .then((res) => {
       console.log(res.data.data.token)
@@ -54,20 +56,24 @@ const SignIncomp = () => {
                 <span></span>
                 <input onChange={(e) => {setUserId(e.target.value)}} value={userId} placeholder="Email" />
               </div>
-              {/* <div className="rradio">
+              <div className="rradio">
               <div>
-                <input onChange={(e) => {setRole(true)}}  type="radio" value="VENDER" name="ht" />
-                <label htmlFor="governmenttype">Vendor</label>
+                <input onChange={(e) => {setRole('VENDOR')}}  type="radio"  value={role} name="ht" id='role' />
+                <label htmlFor="ht">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole(false)}}  type="radio" value="SELLER" name="ht" />
-                <label htmlFor="privatetype">Seller</label>
+                <input onChange={(e) => {setRole('SELLER')}}  type="radio" value={role} name="ht" id='role' />
+                <label htmlFor="ht">Seller</label>
               </div>
-            </div> */}
-              <div className="text1" id="text">
+              <div>
+                <input onChange={(e) => {setRole('ADMIN')}}  type="radio" value={role} name="ht" id='role' />
+                <label htmlFor="ht">Admin</label>
+              </div>
+            </div>
+              {/* <div className="text1" id="text">
                 <span></span>
                 <input onChange={(e) => {setRole(e.target.value)}} value={role} placeholder="Role" />
-              </div>
+              </div> */}
               <div className="text1">
                 <span></span>
                 <input onChange={(e) => {setPassword(e.target.value)}} value={password} placeholder="Password" />

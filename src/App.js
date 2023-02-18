@@ -8,13 +8,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Updatebed from "./Pages/Updatebed/Updatebed";
 import District from "./Pages/Districtwise/District";
+import Landing from "./Pages/Landing/Landing";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element= {<Landing/>}/>
+          <Route path="/home" element={<Home/>} />
           <Route path="/Sign" element={<Sign/>} />
           <Route path="/Info" element={<Info/>} />
           <Route path="/GarbageNearby" element={<GarbageNearby/>} />

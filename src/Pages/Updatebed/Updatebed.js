@@ -1,18 +1,49 @@
-import React  from "react";
+import React, { useState }  from "react";
 import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { useNavigate } from "react-router-dom";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-// import axios from "axios";
+import axios from "axios";
+import { toast } from "react-toastify";
 const Updatebed = () => {
+
+  const [originwaste,setOriginwaste] = useState("");
+  const [typewaste, setTypewaste] = useState("");
+  const [amount, setAmount] = useState("");
+  const [quantity, setQuantity] = useState("");
+
   const navigate = useNavigate(); 
   const handleupdatesubmit= (e) => {
     e.preventDefault();
-    navigate('/Dashboard');
+    // navigate('/Dashboard');
   
+    const data = {
+      wasteFrom:originwaste,
+      wasteType:typewaste,
+      weightInKg:quantity,
+      pricePerKg:amount
+    }
+    console.log(data);
+    axios.post('https://plasticwastemanage-production.up.railway.app/seller/sell',data)
+    .then((res) => {
+      console.log(res.data.data.token)
+        if(res.data.data.token){
+          // localStorage.getItem("token",res.data.token);
+          
+          // if(res.data.token)
+          // localStorage.setItem("_id",res.data.hosId);
+        } 
+      
+    })
+    .catch((err) => {
+      console.log(err);
+      toast.error('Enter correct details')
+    })
+
   }
+
 
   return (
     <div className='Updatebed Info'>
@@ -32,17 +63,8 @@ const Updatebed = () => {
                 <span className="bed_type">Garbage Type</span>
                 <div className="divisionbedtype">
                   <div className="general">
-                    {/* <span className="txt">Origin of Waste</span> */}
                     <div className="generalin">
-                      {/* <HotelIcon sx={{ height: "5vh", width: "3vw" }} /> */}
-                      {/* <TextField
-                        id="outlined-basic"
-                        sx={{ width: "30vw" }}
-                        label="Origin of waste"
-                        size="small"
-                        variant="outlined"
-                        type='text'
-                      /> */}
+                    
 
 <FormControl fullWidth>
 
@@ -52,12 +74,14 @@ const Updatebed = () => {
     id="demo-simple-select"
     // value={originofwaste}
     label="Types of waste"
-    // onChange={handleChange}
+    onChange={(e) => {
+      setOriginwaste(e.target.value);
+    }}
     >
-    {/* <MenuItem value={Industrial}>Industrial</MenuItem> */}
-    {/* <MenuItem value={Household}>Household</MenuItem> */}
-    {/* <MenuItem value={Market}>Market</MenuItem> */}
-    {/* <MenuItem value={Office}>Office</MenuItem> */}
+    <MenuItem value="Industry">Industrial</MenuItem>
+    <MenuItem value="HouseHold">Household</MenuItem>
+    <MenuItem value="Market">Market</MenuItem>
+    <MenuItem value="Office">Office</MenuItem>
 
   </Select>
     </FormControl>
@@ -70,22 +94,17 @@ const Updatebed = () => {
                         size="small"
                         variant="outlined"
                         type='number'
+                        onChange={(e) => {
+                          setAmount(e.target.value);
+                        }}
+                        
+                        
                       />
                     </div>
                     
                   </div>
                   <div className="special">
                     <div className="generalin">
-                      {/* <HotelIcon sx={{ height: "5vh", width: "3vw" }} /> */}
-                      {/* <TextField
-                        id="outlined-basic"
-                        sx={{ width: "30vw" }}
-                        label="Types of waste"
-                        size="small"
-                        variant="outlined"
-                        type='number'
-               
-                      /> */}
 <FormControl fullWidth>
 
 <InputLabel id="demo-simple-select-label">Types of Waste</InputLabel>
@@ -94,12 +113,16 @@ const Updatebed = () => {
     id="demo-simple-select"
     // value={typesofwaste}
     label="Types of waste"
-    // onChange={handleChange}
+    onChange={(e) => {
+      setTypewaste(e.target.value);
+    }}
     >
-    {/* <MenuItem value={Organic}>Organic</MenuItem> */}
-    {/* <MenuItem value={Plastic}>Plastic</MenuItem> */}
-    {/* <MenuItem value={Paper}>Paper</MenuItem> */}
-    {/* <MenuItem value={Metal}>Metal</MenuItem> */}
+    <MenuItem value="Organic">Organic</MenuItem>
+    <MenuItem value="Plastic">Plastic</MenuItem>
+    <MenuItem value="Paper">Paper</MenuItem>
+    <MenuItem value="Metal">Metal</MenuItem>
+    <MenuItem value="Glass">Glass</MenuItem>
+
 
   </Select>
     </FormControl>
@@ -112,6 +135,9 @@ const Updatebed = () => {
                         size="small"
                         variant="outlined"
                         type='number'
+                        onChange={(e) => {
+                          setQuantity(e.target.value);
+                        }}
                     
                       />
                     </div>

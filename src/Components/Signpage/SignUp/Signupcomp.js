@@ -31,6 +31,7 @@ const Signupcomp = () => {
       pin:pincode,
       role:role
     }
+    console.log(data);
     axios.post('https://plasticwastemanage-production.up.railway.app/register',data)
     .then((res) => {
       console.log(res.data);
@@ -70,20 +71,20 @@ const Signupcomp = () => {
           </div>
           <div className="text2in" id="text">
             <div className="ht">Role</div>
-            {/* <div className="rradio">
+            <div className="rradio">
               <div>
-                <input onChange={(e) => {setRole(true)}}  type="radio" value="VENDER" name="ht" />
-                <label htmlFor="governmenttype">Vendor</label>
+                <input onChange={(e) => {setRole('VENDOR')}}  type="radio"  value={role} name="ht" id='role' />
+                <label htmlFor="ht">Vendor</label>
               </div>
               <div>
-                <input onChange={(e) => {setRole(false)}}  type="radio" value="SELLER" name="ht" />
-                <label htmlFor="privatetype">Seller</label>
+                <input onChange={(e) => {setRole('SELLER')}}  type="radio" value={role} name="ht" id='role' />
+                <label htmlFor="ht">Seller</label>
               </div>
-            </div> */}
-             <div className="text2">
+            </div>
+             {/* <div className="text2">
             <span></span>
             <input onChange={(e) => {setRole(e.target.value)}} value={role} placeholder="Role" />
-          </div>
+          </div> */}
           </div>
           <div className="text2">
             <span></span>

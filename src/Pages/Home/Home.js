@@ -24,7 +24,7 @@ const Home = () => {
         <Navbar defaulth={'Home'}/>
   
         <div className='tagline'>
-            <span>You don't need to worry about handling the gargbage because</span>
+            <span>You don't need to worry about handling the garbage</span>
         </div>
         <div className='stickavail' onClick={handledistrictwise}>
             <span>District Wise Garbage</span>

@@ -50,12 +50,15 @@
     justify-content: space-around;
     align-items: center;
     gap:1.2rem;
-    background: #F64B4B;
-    height: 2rem;
+    background: green;
+    height: 2.5rem;
     width: 14rem;
     padding: 0.5rem;
     border-radius: 0.4rem;
     margin-right: 2vw;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
 }
 .location span{
     font-size: 1.3rem;
