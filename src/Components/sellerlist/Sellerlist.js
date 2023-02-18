@@ -108,7 +108,7 @@ const Sellerlist = ({
                   variant="contained"
                   onClick={(e) => {
                     e.preventDefault();
-                    navigate("/bedavailability", { state: { wasteid } });
+                    navigate("/garbageavailability", { state: { wasteid } });
                   }}
                 >
                   Confirm the purchase

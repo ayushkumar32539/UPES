@@ -6,7 +6,7 @@ import GarbageAvailability from "./Pages/Garbage Availability/GarbageAvailabilit
 import GarbageNearby from "./Pages/Garbage Nearby/GarbageNearby";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./Pages/Dashboard/Dashboard";
-import Updatebed from "./Pages/Updatebed/Updatebed";
+import UpdateWaste from "./Pages/UpdateWaste/UpdateWaste";
 import District from "./Pages/Districtwise/District";
 import Landing from "./Pages/Landing/Landing";
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="/GarbageNearby" element={<GarbageNearby/>} />
           <Route path="/garbageavailability" element={<GarbageAvailability/>} />
           <Route path="/Dashboard" element={<Dashboard/>} />
-          <Route path="/Updatebed" element={<Updatebed/>} />
+          <Route path="/UpdateWaste" element={<UpdateWaste/>} />
           <Route path="/districtwise" element={<District/>} />
         </Routes>
       </BrowserRouter>

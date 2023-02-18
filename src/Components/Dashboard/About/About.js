@@ -9,7 +9,7 @@ const About = () => {
     setDash_id(localStorage.getItem('_id'));
     console.log(dash_id);
     if(dash_id){
-      axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
+      axios.get(``)
       .then((res)=>{
         // console.log(res.data)
         setDash_result(res.data);

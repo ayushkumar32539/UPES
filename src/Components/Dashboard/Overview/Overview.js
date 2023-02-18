@@ -33,7 +33,7 @@ useEffect(() => {
       <div className="Overview">
         {/* <div className="dashhsec1">
             <div className="insec11 xd1">
-                <span className="ccc">Total Beds Available</span>
+                <span className="ccc">Total wastes Available</span>
 
       
             </div>
@@ -46,8 +46,8 @@ useEffect(() => {
         </div> */}
         <div className="dashhsec2">
             <div className="insec22">
-                {/* <span>Available Beds for booking:90</span>
-                <span>Booked Beds:20</span> */}
+                {/* <span>Available wastes for booking:90</span>
+                <span>Booked wastes:20</span> */}
                 {/* <PieChart width={400} height={400}>
           <Pie data={data01} dataKey="value" cx="70%" cy="30%" outerRadius={60} fill="#8884d8" />
           <Pie data={data02} dataKey="value" cx="70%" cy="0%" innerRadius={70} outerRadius={90} fill="#82ca9d" label />

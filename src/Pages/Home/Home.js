@@ -4,7 +4,6 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Slider from '../../Components/Slider/Slider';
 import Footer from '../../Components/Footer/Footer';
 import Support from '../../Components/Support/Support';
-// import logo from '../../Assets/SSlogo.png'
 import Chat from '../../Components/Chat/Chat'
 import { useNavigate } from "react-router-dom";
 const Home = () => {

@@ -1,39 +1,44 @@
 import React, { useState }  from "react";
 import "../Info/Info.css";
 import TextField from "@mui/material/TextField";
+// import { useLocalStorage } from "./";
 import HotelIcon from "@mui/icons-material/Hotel";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { useNavigate } from "react-router-dom";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import axios from "axios";
 import { toast } from "react-toastify";
-const Updatebed = () => {
+const UpdateWaste = () => {
 
   const [originwaste,setOriginwaste] = useState("");
   const [typewaste, setTypewaste] = useState("");
   const [amount, setAmount] = useState("");
   const [quantity, setQuantity] = useState("");
+  // const [token,setToken]=useState('');
+
 
   const navigate = useNavigate(); 
   const handleupdatesubmit= (e) => {
     e.preventDefault();
+    const token=localStorage.getItem('token')
+    console.log(token)
+
     // navigate('/Dashboard');
   
     const data = {
       wasteFrom:originwaste,
       wasteType:typewaste,
       weightInKg:quantity,
-      pricePerKg:amount
+      pricePerKg:amount,
+      token:token
+
     }
     console.log(data);
     axios.post('https://plasticwastemanage-production.up.railway.app/seller/sell',data)
     .then((res) => {
-      console.log(res.data.data.token)
         if(res.data.data.token){
-          // localStorage.getItem("token",res.data.token);
-          
-          // if(res.data.token)
-          // localStorage.setItem("_id",res.data.hosId);
+          console.log(res.data.data.token)
+          console.log('Added Successfully')
         } 
       
     })
@@ -46,7 +51,7 @@ const Updatebed = () => {
 
 
   return (
-    <div className='Updatebed Info'>
+    <div className='Updatewaste Info'>
       <div className="center">
         <div className="incenter">
           <div className="layer1">
@@ -60,8 +65,8 @@ const Updatebed = () => {
           <div className="layer3_1">
             <div className="input2">
               <div className="ininput2">
-                <span className="bed_type">Garbage Type</span>
-                <div className="divisionbedtype">
+                <span className="waste_type">Garbage Type</span>
+                <div className="divisionwastetype">
                   <div className="general">
                     <div className="generalin">
                     
@@ -161,4 +166,4 @@ const Updatebed = () => {
   );
 };
 
-export default Updatebed
+export default UpdateWaste

@@ -12,15 +12,16 @@ const Dashboard = () => {
 
     const [dash_id, setDash_id] = useState("");
     const [dash_result, setDash_result] = useState("");
+    const [token,setToken]=useState('');
     // const [dash_booking, setDash_booking] = useState("xxx");
      // eslint-disable-next-line
     useEffect(() => {
       setDash_id(localStorage.getItem('_id'));
-      console.log(dash_id);
+      console.log(localStorage.getItem('token'));
       if(dash_id){
           axios.get(`https://sih-23.herokuapp.com/hospital/${dash_id}`)
           .then((res)=>{
-            //   console.log(res.data)
+              // console.log(res.data)
               setDash_result(res.data);
             //   dash_result && console.log(dash_result.dataWaste);
           })
@@ -74,8 +75,8 @@ const Dashboard = () => {
             {dash_result && <span className="main">{dash_result.dataWaste.city}</span>}
             </div>
             <div>
-               {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/Updatebed')}}>Edit Details</button>}
-               {clicked === 'wastestatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/bedavailability')}}>Place Order</button>}
+               {clicked === 'about' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/UpdateWaste')}}>Add Waste</button>}
+               {clicked === 'wastestatus' && <button className='edit_btn' onClick={(e) => {e.preventDefault();navigate('/garbageavailability')}}>Place Order</button>}
 
             </div>
         </div>
